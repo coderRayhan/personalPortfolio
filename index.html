@@ -1118,7 +1118,16 @@
 				Subject: contactSubject,
 				Body: `Name: ${contactName}\n Mail: ${contactMail}\n Message: ${contactMessage}`
 			}).then(function () {
+				toastr.options = {
+					"closeButton": true,
+					"progressBar": true,
+					"positionClass": "toast-bottom-right"
+				}
 				toastr.success('Message submitted successfully!');
+				$('#contactName').val('');
+				$('#contactEmail').val('');
+				$('#contactSubject').val('');
+				$('#contactMessage').val('');
 			});
 		}
 	</script>
